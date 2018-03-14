@@ -5,10 +5,10 @@ function getLandingPages(leadData) {
         var index = -1;
         var resultRow = result.filter(function (value, idx) {
             
-            if (value.url == getLeadUrl(el)) {
+            if (value.url === getLeadUrl(el)) {
                 index = idx;
             }
-            return value.url == getLeadUrl(el);
+            return value.url === getLeadUrl(el);
         });
 
         var item = addToRow(el, resultRow[0], index);
@@ -21,6 +21,24 @@ function getLandingPages(leadData) {
     });
 
     return result;
+}
+
+function addToRow(lead, landingPage, index) {
+    var leadObj = new Lead(lead.lead_id, lead.lead_type, lead.landing_url);
+    var llCount = leadObj.getCountsByType(); // LandingPage object
+
+    if (index >= 0) {
+        landingPage.transactions += llCount.transactions;
+        landingPage.calls += llCount.calls;
+        landingPage.forms += llCount.forms;
+        landingPage.chats += llCount.chats;
+        landingPage.events += llCount.events;
+
+        return landingPage;
+    } else {
+        llCount.url = getLeadUrl(lead);
+        return llCount;
+    }
 }
 
 function geChartSeries(landingPageData) {
@@ -68,24 +86,6 @@ function getPageUrls(landingPages) {
 
 function getLeadUrl(lead) {
    return  lead.hasOwnProperty('landing_url') ? lead.landing_url : 'not set'
-}
-
-function addToRow(lead, landingPage, index) {
-    var leadObj = new Lead(lead.lead_id, lead.lead_type, lead.landing_url);
-    var llCount = leadObj.getCountsByType(); // LandingPage object
-    
-    if (index >= 0) {
-        landingPage.transactions += llCount.transactions;
-        landingPage.calls += llCount.calls;
-        landingPage.forms += llCount.forms;
-        landingPage.chats += llCount.chats;
-        landingPage.events += llCount.events;
-        
-        return landingPage;
-    } else {
-        llCount.url = getLeadUrl(lead);
-        return llCount;
-    }
 }
 
 function getDateBeforeByDays(days) {
