@@ -2,7 +2,6 @@ function getLandingPages(leadData) {
     var result = [];
     
     leadData.forEach(function(el) {
-        console.log(el);
         var index = undefined;
         var resultRow = result.filter(function (value, idx) {
             if (value.name === el.lead_source + '/' + el.lead_medium) {
@@ -12,6 +11,8 @@ function getLandingPages(leadData) {
         });
 
         var item = addToRow(el, resultRow);
+        console.log(item);
+        console.log('index: ' + index);
         if (resultRow) {
             result[index] = item;
         } else {
