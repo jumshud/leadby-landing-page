@@ -1,0 +1,35 @@
+@media only screen and (min-width:320px){}
+@media only screen and (min-width:480px){}
+
+@media only screen and (min-width:768px){}
+
+@media only screen and (min-width:992px){}
+@media only screen and (min-width:1200px){}
+@media only screen and (max-width:1200px){
+
+}
+@media only screen and (max-width:1200px) and (min-width:769px){
+}
+@media only screen and (max-width:992px){
+    #tables table thead tr th {
+        font-size: 15px;
+    }
+    
+    .landing-url {
+        width: 300px;
+    }
+    
+    .landing-url span.url {
+        width: 200px; 
+    }
+}
+
+@media only screen and (max-width:768px){
+    .container {
+        max-width: 100%;
+    }
+}
+
+@media only screen and (max-width:480px){}
+@media only screen and (max-width:320px){}
+@media only screen and (max-width:400px){}

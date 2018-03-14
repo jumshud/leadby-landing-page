@@ -3,21 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>Leads by Landing Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/media.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.png">
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bluebird/latest/bluebird.min.js"></script>
 </head>
 <body>
+    <header>
+        <nav class="navbar navbar-light">
+          <a class="navbar-brand" href="#">
+              Landing Page Leads
+          </a>
+        </nav>
+    </header>
+    <div class="container">
+        <div id="charts">
+            <div class="loading-holder">
+                <div class="loader"></div></div>
+            </div>
+        <div id="tables">
+           <div class="loading-holder">
+                <div class="loader"></div></div>
+            </div>
+        </div>
+    </div>
+    <footer>
+      <div class="container">
+        &copy;<p class="copyright">Jumshud Mejidli</p>
+      </div>
+    </footer>
 
-<div id="container" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
-
-<script type="application/javascript" src="js/index.js"></script>
-<script type="application/javascript" src="js/landing-page.js"></script>
-<script type="application/javascript" src="js/lead.js"></script>
-<script type="application/javascript" src="js/helpers.js"></script>
-<script type="application/javascript" src="js/api.js"></script>
-<script type="application/javascript" src="js/chart.js"></script>
+    <script type="application/javascript" src="js/landing-page.js"></script>
+    <script type="application/javascript" src="js/lead.js"></script>
+    <script type="application/javascript" src="js/helpers.js"></script>
+    <script type="application/javascript" src="js/api.js"></script>
+    <script type="application/javascript" src="js/components.js"></script>
+    <script type="application/javascript" src="js/index.js"></script>
 </body>
 </html>

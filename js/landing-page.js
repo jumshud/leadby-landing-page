@@ -11,8 +11,8 @@
  * @param chats
  * @param events
  */
-function LandingPage(name, transactions, calls, forms, chats, events) {
-    this.name = name;
+function LandingPage(url, transactions, calls, forms, chats, events) {
+    this.url = url;
     this.transactions = transactions;
     this.calls = calls;
     this.forms = forms;
@@ -20,7 +20,7 @@ function LandingPage(name, transactions, calls, forms, chats, events) {
     this.events = events;
 }
 
-LandingPage.prototype.getTotalByLead = function() {
+LandingPage.prototype.getTotalLeads = function() {
     return (this.transactions + this.calls + this.forms + this.chats + this.events)
 };
 
