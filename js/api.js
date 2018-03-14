@@ -1,6 +1,6 @@
 function getApiUrl() {
     var date = getDateBeforeByDays(60);
-    return 'whatconvert-lead.json';
+    //return 'whatconvert-lead.json';
     return 'https://app.whatconverts.com/api/v1/leads?leads_per_page=250&start_date=' + date;
 }
 
@@ -15,6 +15,7 @@ function getLeadsData() {
             request.setRequestHeader("Access-Control-Allow-Origin", '*');
         },
         success: function (data) {
+            console.log(data.leads);
             getLandingPages(data.leads);
         },
         error: function (error) {
