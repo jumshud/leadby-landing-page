@@ -15,7 +15,6 @@ function getLeadsData() {
             request.setRequestHeader("Access-Control-Allow-Origin", '*');
         },
         success: function (data) {
-            console.log(data.leads);
             getLandingPages(data.leads);
         },
         error: function (error) {

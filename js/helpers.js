@@ -2,6 +2,7 @@ function getLandingPages(leadData) {
     var result = [];
     
     leadData.forEach(function(el) {
+        console.log(el);
         var index = undefined;
         var resultRow = result.filter(function (value, idx) {
             if (value.name === el.lead_source + '/' + el.lead_medium) {
